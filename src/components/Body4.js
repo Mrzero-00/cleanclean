@@ -1,0 +1,115 @@
+import { Box, Flex, Text } from "@chakra-ui/react";
+
+const Body4 = () => {
+  return (
+    <Flex
+      w="100%"
+      py="100px"
+      alignItems={"center"}
+      flexDirection="column"
+      bgImage={"./img/body4bg.png"}
+      bgSize="cover"
+    >
+      <Box
+        w="212px"
+        h="10px"
+        backgroundRepeat={"no-repeat"}
+        backgroundImage={"./img/body4Text.png"}
+        bgSize="contain"
+      />
+
+      <Flex
+        fontSize={"30px"}
+        flexWrap={"wrap"}
+        justifyContent="center"
+        fontWeight={"bold"}
+        my="10px"
+      >
+        <Text color="#2770D0" h="100%" p="0px" m="0px">
+          청소를부탁해
+        </Text>
+        <Text color="#fff" h="100%" p="0px" m="0px">
+          에서 청소를 부탁하는 방법
+        </Text>
+      </Flex>
+      <Flex
+        w={"100vw"}
+        gap="5px"
+        justifyContent={"center"}
+        flexWrap={"wrap"}
+        alignItems={"end"}
+        mt="40px"
+      >
+        <Box
+          w="140px"
+          h="200px"
+          backgroundImage={"./img/body4Item1.png"}
+          backgroundRepeat="no-repeat"
+          backgroundSize={"cover"}
+        />
+        <Box
+          w="24px"
+          h="14px"
+          mb="20px"
+          bgImg={"./img/body4ItemArrow.png"}
+          backgroundRepeat="no-repeat"
+          backgroundSize={"cover"}
+        />
+        <Box
+          w="140px"
+          h="200px"
+          bgImg={"./img/body4Item2.png"}
+          backgroundRepeat="no-repeat"
+          backgroundSize={"cover"}
+        />
+        <Box
+          w="24px"
+          h="14px"
+          mb="20px"
+          bgImg={"./img/body4ItemArrow.png"}
+          backgroundRepeat="no-repeat"
+          backgroundSize={"cover"}
+        />
+        <Box
+          w="140px"
+          h="200px"
+          bgImg={"./img/body4Item3.png"}
+          backgroundRepeat="no-repeat"
+          backgroundSize={"cover"}
+        />
+        <Box
+          w="24px"
+          h="14px"
+          mb="20px"
+          bgImg={"./img/body4ItemArrow.png"}
+          backgroundRepeat="no-repeat"
+          backgroundSize={"cover"}
+        />
+        <Box
+          w="140px"
+          h="200px"
+          bgImg={"./img/body4Item4.png"}
+          backgroundRepeat="no-repeat"
+          backgroundSize={"cover"}
+        />
+        <Box
+          w="24px"
+          h="14px"
+          mb="20px"
+          bgImg={"./img/body4ItemArrow.png"}
+          backgroundRepeat="no-repeat"
+          backgroundSize={"cover"}
+        />
+        <Box
+          w="140px"
+          h="200px"
+          bgImg={"./img/body4Item5.png"}
+          backgroundRepeat="no-repeat"
+          backgroundSize={"cover"}
+        />
+      </Flex>
+    </Flex>
+  );
+};
+
+export default Body4;
