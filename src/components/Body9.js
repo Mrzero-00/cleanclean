@@ -29,6 +29,7 @@ const changeState=(e)=>{
 
 const sendSms = ()=>{
   const formData = new FormData();
+  formData.append("sms_url","http://sslsms.cafe24.com/sms_sender.php");
   formData.append('user_id',"youngh9110");
   formData.append('secure',"328ac6ca7b2f71e25d5bc8a3f11d97b7");
   formData.append('title',"청소나라 견적문의");
