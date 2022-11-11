@@ -12,8 +12,7 @@ import {
   Text,
   Textarea,
 } from "@chakra-ui/react";
-import Cafe24Message from 'cafe24-message';
-// import axios from 'axios';
+import axios from 'axios';
 
 const Body9 = () => {
 const date  = new Date();
@@ -56,7 +55,6 @@ const sendSms = ()=>{
 
   return (
     <>
-    {/* <a href="sms:01082371502body=이게가나요">문자보내기</a> */}
       <Show breakpoint="(min-width:1000px)">
         <Flex
           w="100vw"
@@ -284,7 +282,6 @@ const sendSms = ()=>{
                   color="#fff"
                   fontWeight={"bold"}
                   fontSize="18px"
-
                   onClick={sendSms}
                 >
                   견적 문의하기
