@@ -1,4 +1,4 @@
-import { Box, Flex, Link, Show, Text } from "@chakra-ui/react";
+import { Box, Flex, Link } from "@chakra-ui/react";
 import Banner from "./components/Banner";
 import Body1 from "./components/Body1";
 import Body2 from "./components/Body2";
@@ -15,6 +15,7 @@ import NavTab from "./components/NavTab";
 import "./index.css";
 
 function App() {
+
   return (
     <Flex flexDirection={"column"} alignItems="center" w="100vw">
       <Header />
