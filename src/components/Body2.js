@@ -36,7 +36,7 @@ const Body2 = () => {
       >
         <Box
           w="200px"
-          cursor={"pointer"}
+          
           h="100%"
           backgroundRepeat={"no-repeat"}
           backgroundImage={"./img/bodyIcon1.png"}
@@ -44,7 +44,7 @@ const Body2 = () => {
         />
         <Box
           w="200px"
-          cursor={"pointer"}
+          
           h="100%"
           backgroundRepeat={"no-repeat"}
           backgroundImage={"./img/bodyIcon2.png"}
@@ -52,7 +52,7 @@ const Body2 = () => {
         />
         <Box
           w="200px"
-          cursor={"pointer"}
+          
           h="100%"
           backgroundRepeat={"no-repeat"}
           backgroundImage={"./img/bodyIcon3.png"}
@@ -60,7 +60,7 @@ const Body2 = () => {
         />
         <Box
           w="200px"
-          cursor={"pointer"}
+          
           h="100%"
           backgroundRepeat={"no-repeat"}
           backgroundImage={"./img/bodyIcon4.png"}
@@ -68,7 +68,6 @@ const Body2 = () => {
         />
         <Box
           w="200px"
-          cursor={"pointer"}
           h="100%"
           backgroundRepeat={"no-repeat"}
           backgroundImage={"./img/bodyIcon5.png"}
