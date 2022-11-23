@@ -16,6 +16,7 @@
     "framer-motion": "^7.5.0",
     "gh-pages": "^4.0.0",
     "https": "^1.0.0",
+    "iconv-lite": "^0.6.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -25,6 +26,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "local": "react-scripts start",
     "start": "node ./web.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
