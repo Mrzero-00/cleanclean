@@ -543,7 +543,7 @@ const sendSms = ()=>{
                   color="#fff"
                   fontWeight={"bold"}
                   fontSize="18px"
-                  disabled={state.tel.length>=9?false:true}
+                  disabled={state?.tel?.length>=9?false:true}
                   _disabled={{
                     opacity:"0.5",
                     cursor:"not-allowed"
