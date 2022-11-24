@@ -36,8 +36,6 @@ const sendSms = ()=>{
 
 
 
-
-
   return (
     <>
       <Show breakpoint="(min-width:1000px)">
@@ -478,8 +476,8 @@ const sendSms = ()=>{
                 <Input
                   placeholder="연락처(-제외하고 입력해주세요)"
                   type="tel"
-                  h="30px"
-                  w="100%"
+                  height="30px"
+                  width="100%"
                   borderWidth="1px"
                   borderColor={"#000"}
                   name="tel"
@@ -545,6 +543,11 @@ const sendSms = ()=>{
                   color="#fff"
                   fontWeight={"bold"}
                   fontSize="18px"
+                  disabled={state.tel.length>=9?false:true}
+                  _disabled={{
+                    opacity:"0.5",
+                    cursor:"not-allowed"
+                  }}
                   onClick={sendSms}
                 >
                   견적 문의하기

@@ -23,18 +23,19 @@ export const sendSms_cafe24 = (state)=>{
   
 
 export const sendSms_munja = (state)=>{
-    // const formData = new FormData();
-    // formData.append('message',`고객명:${state.name}\n연락처:${state.tel}\n주소:${state.addres} ${state.detailAddres}\n일정:${state.date}\n건물 종류:${state.object}\n서비스 종류:${state.kind}\n평수:${state.area}\n방 갯수:${state.room}\n화장실 갯수:${state.bathRoom}\n베란다:${state.veranda}`);
     axios({
       method: 'POST',
-      url: 'http://www.munjanara.co.kr/MSG/send/web_admin_send.htm',
+      headers:{
+        "Content-Type":"text/html"
+      },
+      url: 'https://www.munjanara.co.kr/MSG/send/web_admin_send.htm',
       params:{
         userid:"youngh1991",
         passwd:"cjdth1031",
         sender:'01033356555',
         receiver:'01082371502',
-        // encode:0,
-        message:"안녕"
+        encode:0,
+        message:`cleanApp_sms ${state.tel}`
         // message:`고객명:${state.name}\n연락처:${state.tel}\n주소:${state.addres} ${state.detailAddres}\n일정:${state.date}\n건물 종류:${state.object}\n서비스 종류:${state.kind}\n평수:${state.area}\n방 갯수:${state.room}\n화장실 갯수:${state.bathRoom}\n베란다:${state.veranda}`
       }
     }).then((e)=>{console.log(e)})
