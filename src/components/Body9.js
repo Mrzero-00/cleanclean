@@ -31,6 +31,7 @@ const changeState=(e)=>{
 
 const sendSms = ()=>{
  sendSms_munja(state);
+ alert("견적문의를 발송했습니다.");
 //  sendSms_cafe24(state);
 }
 
@@ -262,6 +263,11 @@ const sendSms = ()=>{
                   w="100%"
                   bg="#2B2B2B"
                   h="45px"
+                  disabled={state?.tel?.length>=9?false:true}
+                  _disabled={{
+                    opacity:"0.5",
+                    cursor:"not-allowed"
+                  }}
                   color="#fff"
                   fontWeight={"bold"}
                   fontSize="18px"
