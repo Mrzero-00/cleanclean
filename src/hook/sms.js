@@ -1,5 +1,4 @@
 import axios from "axios";
-import { decode, encode } from "iconv-lite";
 
 export const sendSms_cafe24 = (state) => {
   const formData = new FormData();
@@ -27,10 +26,7 @@ export const sendSms_cafe24 = (state) => {
 };
 
 export const sendSms_munja = (state) => {
-  // const formData = new FormData();
 
-  // formData.append('message',`고객명:${state.name}\n연락처:${state.tel}\n주소:${state.addres} ${state.detailAddres}\n일정:${state.date}\n건물 종류:${state.object}\n서비스 종류:${state.kind}\n평수:${state.area}\n방 갯수:${state.room}\n화장실 갯수:${state.bathRoom}\n베란다:${state.veranda}`);
-  // console.log("encode:",encode('안녕하세요',"EUC-KR").toString());
   const AuthData = {
     key: "x2bv1knsxecpcvnir4e72igdmp7xnudr",
     user_id: "youngh91",
