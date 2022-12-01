@@ -27,14 +27,10 @@ const changeState=(e)=>{
   })
 }
 
-
-
 const sendSms = ()=>{
   sendSms_munja(state);
  alert("견적문의를 발송했습니다!!");
 }
-
-console.log(state);
   return (
     <>
       <Show breakpoint="(min-width:1000px)">
