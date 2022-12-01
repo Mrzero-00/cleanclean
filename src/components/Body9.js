@@ -35,8 +35,7 @@ const sendSms = ()=>{
 //  sendSms_cafe24(state);
 }
 
-
-
+console.log(state);
   return (
     <>
       <Show breakpoint="(min-width:1000px)">
@@ -504,7 +503,7 @@ const sendSms = ()=>{
                     borderWidth="1px"
                     borderColor={"#000"}
                     name="addres"
-                    value={state.addres}
+                    value={state.address}
                     onChange={changeState}
                   />
                   <Input
@@ -514,7 +513,7 @@ const sendSms = ()=>{
                     borderWidth="1px"
                     borderColor={"#000"}
                     name="detailAddres"
-                    value={state.detailAddres}
+                    value={state.detailAddress}
                     onChange={changeState}
                   />
                 </Flex>

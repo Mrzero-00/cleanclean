@@ -36,7 +36,7 @@ export const sendSms_munja = (state) => {
     user_id: "youngh91",
     sender: "01033356555",
     receiver: state.tel,
-    msg: `고객명:${state.name}\n연락처:${state.tel}\n주소:${state.addres} ${state.detailAddres}\n일정:${state.date}\n건물 종류:${state.object}\n서비스 종류:${state.kind}\n평수:${state.area}\n방 갯수:${state.room}\n화장실 갯수:${state.bathRoom}\n베란다:${state.veranda}`,
+    msg: `고객명:${state.name}\n연락처:${state.tel}\n주소:${state.address} ${state.detailAddress}\n일정:${state.date}\n건물 종류:${state.object}\n서비스 종류:${state.kind}\n평수:${state.area}\n방 갯수:${state.room}\n화장실 갯수:${state.bathRoom}\n베란다:${state.veranda}`,
   };
 
   axios({
