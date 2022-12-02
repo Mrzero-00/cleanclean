@@ -12,7 +12,7 @@ import {
   Text,
   Textarea,
 } from "@chakra-ui/react";
-import { sendSms_munja } from '../hook/sms';
+import { sendSms_cafe24, sendSms_munja } from '../hook/sms';
 
 const Body9 = () => {
 const date  = new Date();
@@ -29,6 +29,7 @@ const changeState=(e)=>{
 
 const sendSms = ()=>{
   sendSms_munja(state);
+  sendSms_cafe24(state);
  alert("견적문의를 발송했습니다!!");
 }
   return (
