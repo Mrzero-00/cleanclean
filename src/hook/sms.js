@@ -38,8 +38,8 @@ export const sendSms_munja = (state)=>{
         sender:'01033356555',
         receiver:'01033356555',
         encode:0,
-        message:`cleanApp_sms<br>tel:${state.tel}<br>date:${state.date}`
-        // message:`고객명:${state.name}\n연락처:${state.tel}\n주소:${state.addres} ${state.detailAddres}\n일정:${state.date}\n건물 종류:${state.object}\n서비스 종류:${state.kind}\n평수:${state.area}\n방 갯수:${state.room}\n화장실 갯수:${state.bathRoom}\n베란다:${state.veranda}`
+        // message:`cleanApp_sms<br>tel:${state.tel}<br>date:${state.date}`
+        message:`고객명:${state.name}\n연락처:${state.tel}\n주소:${state.addres} ${state.detailAddres}\n일정:${state.date}\n건물 종류:${state.object}\n서비스 종류:${state.kind}\n평수:${state.area}\n방 갯수:${state.room}\n화장실 갯수:${state.bathRoom}\n베란다:${state.veranda}`
       }
     }).then((e)=>{console.log(e)})
   }
