@@ -12,7 +12,7 @@ import {
   Text,
   Textarea,
 } from "@chakra-ui/react";
-import { sendSms_cafe24, sendSms_munja } from '../hook/sms';
+import { sendSms_munja } from '../hook/sms';
 
 const Body9 = () => {
 const date  = new Date();
@@ -85,7 +85,6 @@ const sendSms = ()=>{
                   borderColor={"#000"}
                 />
               </Flex>
-              {console.log(state)}
               <Flex alignItems={"center"} gap="10px">
                 <Show breakpoint="(min-width: 1000px)">
                   <Text m="0px" minW="100px">
