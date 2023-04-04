@@ -1,5 +1,4 @@
 import axios from "axios";
-import {decode,encode} from "iconv-lite";
 
 export const sendSms_cafe24 = (state)=>{
     const formData = new FormData();
@@ -24,7 +23,7 @@ export const sendSms_cafe24 = (state)=>{
 
 export const sendSms_munja = (state)=>{
     // const formData = new FormData();
-    const buffer = encode('안녕하세요',"euc-kr").toString('utf-8');
+    
     // formData.append('message',`고객명:${state.name}\n연락처:${state.tel}\n주소:${state.addres} ${state.detailAddres}\n일정:${state.date}\n건물 종류:${state.object}\n서비스 종류:${state.kind}\n평수:${state.area}\n방 갯수:${state.room}\n화장실 갯수:${state.bathRoom}\n베란다:${state.veranda}`);
     // console.log("encode:",encode('안녕하세요',"EUC-KR").toString());
     axios({
@@ -35,11 +34,11 @@ export const sendSms_munja = (state)=>{
       url: 'https://www.munjanara.co.kr/MSG/send/web_admin_send.htm',
       params:{
         userid:"youngh1991",
-        passwd:"cjdth10311",
+        passwd:"cjdth1031",
         sender:'01033356555',
-        receiver:'01082371502',
+        receiver:'01033356555',
         encode:0,
-        message:buffer
+        message:`cleanApp_sms<br>tel:${state.tel}<br>date:${state.date}`
         // message:`고객명:${state.name}\n연락처:${state.tel}\n주소:${state.addres} ${state.detailAddres}\n일정:${state.date}\n건물 종류:${state.object}\n서비스 종류:${state.kind}\n평수:${state.area}\n방 갯수:${state.room}\n화장실 갯수:${state.bathRoom}\n베란다:${state.veranda}`
       }
     }).then((e)=>{console.log(e)})

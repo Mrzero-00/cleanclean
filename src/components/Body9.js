@@ -12,7 +12,7 @@ import {
   Text,
   Textarea,
 } from "@chakra-ui/react";
-import { sendSms_cafe24, sendSms_munja } from '../hook/sms';
+import { sendSms_munja } from '../hook/sms';
 
 const Body9 = () => {
 const date  = new Date();
@@ -27,17 +27,24 @@ const changeState=(e)=>{
   })
 }
 
-
-
 const sendSms = ()=>{
- sendSms_munja(state);
-//  sendSms_cafe24(state);
+  sendSms_munja(state);
+  setState({
+    name:"",
+    kind:"",
+    date:"",
+    tel:"",
+    address:"",
+    detailAddress:"",
+    area:"",
+    room:"",
+    bathRoom:"",
+    veranda:"",
+    QA:""
+  });
+  alert('견적문의가 발송되었습니다!');
+  // sendSms_cafe24(state);
 }
-
-
-
-
-
   return (
     <>
       <Show breakpoint="(min-width:1000px)">
@@ -72,6 +79,9 @@ const sendSms = ()=>{
                   name="name"
                   onChange={changeState}
                   borderWidth="1px"
+
+                  value={state?.name||""}
+                  // value={'dkdk'}
                   borderColor={"#000"}
                 />
               </Flex>
@@ -85,6 +95,8 @@ const sendSms = ()=>{
                   style={{ width: "100%", height: "30px", borderColor: "#000" }}
                   placeholder="서비스 종류"
                   name="kind"
+
+                  value={state.kind}
                   onChange={changeState}
                 >
                   <option value="입주 청소">입주 청소</option>
@@ -100,6 +112,8 @@ const sendSms = ()=>{
                   style={{ width: "100%", height: "30px" }}
                   placeholder="건물 종류"
                   name="object"
+
+                  value={state.object}
                   onChange={changeState}
                 >
                   <option value="아파트">아파트</option>
@@ -120,6 +134,7 @@ const sendSms = ()=>{
                   style={{ width: "100%", height: "30px", borderColor: "#000" }}
                   placeholder="방 갯수"
                   name="room"
+                  value={state.room}
                   onChange={changeState}
                 >
                   <option value="1개">1개</option>
@@ -137,6 +152,8 @@ const sendSms = ()=>{
                   style={{ width: "100%", height: "30px", borderColor: "#000" }}
                   placeholder="화장실 갯수"
                   name="bathRoom"
+
+                  value={state.bathRoom}
                   onChange={changeState}
                 >
                   <option value="1개">1개</option>
@@ -154,6 +171,7 @@ const sendSms = ()=>{
                   style={{ width: "100%", height: "30px", borderColor: "#000" }}
                   placeholder="베란다 갯수"
                   name="veranda"
+                  value={state.veranda}
                   onChange={changeState}
                 >
                   <option value="1개">1개</option>
@@ -174,6 +192,7 @@ const sendSms = ()=>{
                   h="30px"
                   w="100%"
                   name="date"
+                  value={state.date}
                   onChange={changeState}
                   borderWidth="1px"
                   borderColor={"#000"}
@@ -188,6 +207,7 @@ const sendSms = ()=>{
                   h="30px"
                   w="100%"
                   name="area"
+                  value={state.area}
                   onChange={changeState}
                   borderWidth="1px"
                   borderColor={"#000"}
@@ -206,6 +226,7 @@ const sendSms = ()=>{
                   h="30px"
                   w="100%"
                   name="tel"
+                  value={state.tel}
                   onChange={changeState}
                   borderWidth="1px"
                   borderColor={"#000"}
@@ -223,6 +244,7 @@ const sendSms = ()=>{
                     h="30px"
                     w="100%"
                     name="address"
+                    value={state.address}
                     onChange={changeState}
                     borderWidth="1px"
                     borderColor={"#000"}
@@ -232,6 +254,7 @@ const sendSms = ()=>{
                     h="30px"
                     w="100%"
                     name="detailAddress"
+                    value={state.detailAddress}
                     onChange={changeState}
                     borderWidth="1px"
                     borderColor={"#000"}
@@ -250,6 +273,7 @@ const sendSms = ()=>{
                   w="100%"
                   name="QA"
                   onChange={changeState}
+                  value={state.QA}
                   resize={"none"}
                   borderWidth="1px"
                   borderColor={"#000"}
@@ -264,6 +288,12 @@ const sendSms = ()=>{
                   w="100%"
                   bg="#2B2B2B"
                   h="45px"
+                  cursor={'pointer'}
+                  disabled={state?.tel?.length>=9?false:true}
+                  _disabled={{
+                    opacity:"0.5",
+                    cursor:"not-allowed"
+                  }}
                   color="#fff"
                   fontWeight={"bold"}
                   fontSize="18px"
@@ -308,6 +338,7 @@ const sendSms = ()=>{
                   borderWidth="1px"
                   borderColor={"#000"}
                   name="name"
+                  value={state.name}
                   onChange={changeState}
                 />
               </Flex>
@@ -328,6 +359,7 @@ const sendSms = ()=>{
                   }}
                   placeholder="서비스 종류"
                   name="kind"
+                  value={state.kind}
                   onChange={changeState}
                 >
                   <option value="입주 청소">입주 청소</option>
@@ -349,6 +381,7 @@ const sendSms = ()=>{
                     backgroundColor: "#fff",
                   }}
                   
+                  value={state.object}
                   placeholder="건물 종류"
                   name="object"
                   onChange={changeState}
@@ -377,6 +410,7 @@ const sendSms = ()=>{
                     backgroundColor: "#fff",
                   }}
                   placeholder="방 갯수"
+                  value={state.room}
                   name="room"
                   onChange={changeState}
                 >
@@ -402,6 +436,7 @@ const sendSms = ()=>{
                   }}
                   placeholder="화장실 갯수"
                   name="bathRoom"
+                  value={state.bathRoom}
                   onChange={changeState}
                 >
                   <option value="1개">1개</option>
@@ -424,6 +459,7 @@ const sendSms = ()=>{
                     borderRadius: "4px",
                     backgroundColor: "#fff",
                   }}
+                  value={state.veranda}
                   placeholder="베란다 갯수"
                   name="veranda"
                   onChange={changeState}
@@ -449,6 +485,7 @@ const sendSms = ()=>{
                   backgroundColor={"#fff"}
                   borderColor={"#000"}
                   name="date"
+                  value={state.date}
                   onChange={changeState}
                   defaultValue={today}
                 />
@@ -478,10 +515,11 @@ const sendSms = ()=>{
                 <Input
                   placeholder="연락처(-제외하고 입력해주세요)"
                   type="tel"
-                  h="30px"
-                  w="100%"
+                  height="30px"
+                  width="100%"
                   borderWidth="1px"
                   borderColor={"#000"}
+                  value={state.tel}
                   name="tel"
                   onChange={changeState}
                 />
@@ -499,8 +537,8 @@ const sendSms = ()=>{
                     w="100%"
                     borderWidth="1px"
                     borderColor={"#000"}
-                    name="addres"
-                    value={state.addres}
+                    name="address"
+                    value={state.address}
                     onChange={changeState}
                   />
                   <Input
@@ -543,8 +581,14 @@ const sendSms = ()=>{
                   bg="#2B2B2B"
                   h="45px"
                   color="#fff"
+                  cursor={'pointer'}
                   fontWeight={"bold"}
                   fontSize="18px"
+                  disabled={state?.tel?.length>=9?false:true}
+                  _disabled={{
+                    opacity:"0.5",
+                    cursor:"not-allowed"
+                  }}
                   onClick={sendSms}
                 >
                   견적 문의하기
