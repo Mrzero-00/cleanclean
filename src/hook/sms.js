@@ -6,7 +6,7 @@ export const sendSms_cafe24 = (state)=>{
         const receiver = '010-8237-1502'; // 수신번호
         // const message = '테스트';
         const message = `고객명:${state.name}\n연락처:${state.tel}\n주소:${state.address} ${state.detailAddres}\n일정:${state.date}\n건물 종류:${state.object}\n서비스 종류:${state.kind}\n평수:${state.area}\n방 갯수:${state.room}\n화장실 갯수:${state.bathRoom}\n베란다:${state.veranda}`; // 메시지 내용
-  const smsURL = '/sms_sender.php'; // Cafe24 SMS API URL (프록시 서버를 통해 요청 전달)
+  const smsURL = `${process.env.REACT_APP_DB_HOST}/sms_sender.php`; // Cafe24 SMS API URL (프록시 서버를 통해 요청 전달)
   const requestData = new FormData();
 
   requestData.append('user_id', userId);
