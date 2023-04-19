@@ -1,46 +1,70 @@
-import axios from "axios";
 
 export const sendSms_cafe24 = (state)=>{
-    const formData = new FormData();
-    formData.append("sms_url","http://sslsms.cafe24.com/sms_sender.php");
-    formData.append('user_id',"youngh9110");
-    formData.append('secure',"328ac6ca7b2f71e25d5bc8a3f11d97b7");
-    formData.append('title',"청소나라 견적문의");
-    formData.append('sphone1',"010");
-    formData.append("sphone2",'3335');
-    formData.append("sphone3",'6555');
-    formData.append("rphone",'010-8237-1502');
-    formData.append("testflag","Y");
-    formData.append('msg',`고객명:${state.name}\n연락처:${state.tel}\n주소:${state.addres} ${state.detailAddres}\n일정:${state.date}\n건물 종류:${state.object}\n서비스 종류:${state.kind}\n평수:${state.area}\n방 갯수:${state.room}\n화장실 갯수:${state.bathRoom}\n베란다:${state.veranda}`);
+        const userId = 'youngh9110'; // Cafe24 계정 아이디
+        const secure = '328ac6ca7b2f71e25d5bc8a3f11d97b7'; // Cafe24 계정 인증키
+        const sender = '01033356555'; // 발신번호
+        const receiver = '010-8237-1502'; // 수신번호
+        // const message = '테스트';
+        const message = `고객명:${state.name}\n연락처:${state.tel}\n주소:${state.address} ${state.detailAddres}\n일정:${state.date}\n건물 종류:${state.object}\n서비스 종류:${state.kind}\n평수:${state.area}\n방 갯수:${state.room}\n화장실 갯수:${state.bathRoom}\n베란다:${state.veranda}`; // 메시지 내용
+  const smsURL = '/sms_sender.php'; // Cafe24 SMS API URL (프록시 서버를 통해 요청 전달)
+  const requestData = new FormData();
+
+  requestData.append('user_id', userId);
+  requestData.append('secure', secure);
+  requestData.append('msg', message);
+  requestData.append('rphone', receiver);
+  requestData.append('sphone1', sender.substring(0, 3));
+  requestData.append('sphone2', sender.substring(3, 7));
+  requestData.append('sphone3', sender.substring(7));
+  requestData.append('smsType', 'L');
+  requestData.append('mode', '1');
   
-    axios({
-      method: 'POST',
-      url: 'http://sslsms.cafe24.com/sms_sender.php',
-      data: formData,
-    }).then((e)=>{console.log(e)})
+  fetch(smsURL,{
+    method:"post",
+    body:requestData
+  })
+
+
+  // axios.post(smsURL,{
+  //   ...requestData
+  // });
+
+
   }
   
 
-export const sendSms_munja = (state)=>{
-    // const formData = new FormData();
+// export const sendSms_munja = (state)=>{
+//     // const formData = new FormData();
+
+//     const query = queryString.stringify({
+//       userid:'youngh1991',
+//       passwd:"cjdth1031",
+//       sender:"01033356555",
+//       receiver:"01082371502",
+//       encode:1,
+//       message:encodeURI(`고객명:${state.name}\n연락처:${state.tel}\n주소:${state.addres} ${state.detailAddres}\n일정:${state.date}\n건물 종류:${state.object}\n서비스 종류:${state.kind}\n평수:${state.area}\n방 갯수:${state.room}\n화장실 갯수:${state.bathRoom}\n베란다:${state.veranda}`)
+//     });
+
+
     
-    // formData.append('message',`고객명:${state.name}\n연락처:${state.tel}\n주소:${state.addres} ${state.detailAddres}\n일정:${state.date}\n건물 종류:${state.object}\n서비스 종류:${state.kind}\n평수:${state.area}\n방 갯수:${state.room}\n화장실 갯수:${state.bathRoom}\n베란다:${state.veranda}`);
-    // console.log("encode:",encode('안녕하세요',"EUC-KR").toString());
-    axios({
-      method: 'POST',
-      headers:{
-        "Content-Type": "text/html; charset=euc-kr"
-      },
-      url: 'https://www.munjanara.co.kr/MSG/send/web_admin_send.htm',
-      params:{
-        userid:"youngh1991",
-        passwd:"cjdth1031",
-        sender:'01033356555',
-        receiver:'01033356555',
-        encode:0,
-        // message:`cleanApp_sms<br>tel:${state.tel}<br>date:${state.date}`
-        message:`cleanApp_sms<br>고객명:${state.name}\n연락처:${state.tel}\n주소:${state.addres} ${state.detailAddres}\n일정:${state.date}\n건물 종류:${state.object}\n서비스 종류:${state.kind}\n평수:${state.area}\n방 갯수:${state.room}\n화장실 갯수:${state.bathRoom}\n베란다:${state.veranda}`
-      }
-    }).then((e)=>{console.log(e)})
-  }
+
+//     // formData.append('message',`고객명:${state.name}\n연락처:${state.tel}\n주소:${state.addres} ${state.detailAddres}\n일정:${state.date}\n건물 종류:${state.object}\n서비스 종류:${state.kind}\n평수:${state.area}\n방 갯수:${state.room}\n화장실 갯수:${state.bathRoom}\n베란다:${state.veranda}`);
+//     // console.log("encode:",encode('안녕하세요',"EUC-KR").toString());
+//     axios({
+//       method: 'POST',
+//       headers:{
+//         "Content-Type": "text/html; charset=euc-kr"
+//       },
+//       url: 'https://www.munjanara.co.kr/MSG/send/web_admin_send.htm',
+//       params:{
+//         userid:"youngh1991",
+//         passwd:"cjdth1031",
+//         sender:'01033356555',
+//         receiver:'01033356555',
+//         encode:0,
+//         // message:`cleanApp_sms<br>tel:${state.tel}<br>date:${state.date}`
+//         message:`cleanApp_sms<br>고객명:${state.name}\n연락처:${state.tel}\n주소:${state.addres} ${state.detailAddres}\n일정:${state.date}\n건물 종류:${state.object}\n서비스 종류:${state.kind}\n평수:${state.area}\n방 갯수:${state.room}\n화장실 갯수:${state.bathRoom}\n베란다:${state.veranda}`
+//       }
+//     }).then((e)=>{console.log(e)})
+//   }
   

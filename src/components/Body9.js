@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 
 import {
   Box,
@@ -12,7 +12,7 @@ import {
   Text,
   Textarea,
 } from "@chakra-ui/react";
-import { sendSms_munja } from '../hook/sms';
+import { sendSms_cafe24 } from '../hook/sms';
 
 const Body9 = () => {
 const date  = new Date();
@@ -28,7 +28,7 @@ const changeState=(e)=>{
 }
 
 const sendSms = ()=>{
-  sendSms_munja(state);
+  sendSms_cafe24(state);
   setState({
     name:"",
     kind:"",
@@ -43,8 +43,11 @@ const sendSms = ()=>{
     QA:""
   });
   alert('견적문의가 발송되었습니다!');
-  // sendSms_cafe24(state);
 }
+
+useEffect(()=>{
+  console.log(state);
+},[state])
   return (
     <>
       <Show breakpoint="(min-width:1000px)">
