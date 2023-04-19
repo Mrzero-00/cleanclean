@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import { useState} from 'react';
 
 import {
   Box,
@@ -45,9 +45,6 @@ const sendSms = ()=>{
   alert('견적문의가 발송되었습니다!');
 }
 
-useEffect(()=>{
-  console.log(state);
-},[state])
   return (
     <>
       <Show breakpoint="(min-width:1000px)">
