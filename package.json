@@ -27,6 +27,7 @@
     "util": "^0.12.5",
     "web-vitals": "^2.1.4"
   },
+  "build": { "proxy": "https://sslsms.cafe24.com" },
   "scripts": {
     "local": "react-scripts start",
     "start": "node ./web.js",
