@@ -1,4 +1,4 @@
-import { useState} from 'react';
+import { useState } from "react";
 
 import {
   Box,
@@ -12,38 +12,40 @@ import {
   Text,
   Textarea,
 } from "@chakra-ui/react";
-import { sendSms_cafe24 } from '../hook/sms';
+import { sendSms_munja } from "../hook/sms";
 
 const Body9 = () => {
-const date  = new Date();
-const today = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`
-const [state,setState] = useState({});
+  const date = new Date();
+  const today = `${date.getFullYear()}-${
+    date.getMonth() + 1
+  }-${date.getDate()}`;
+  const [state, setState] = useState({});
 
-const changeState=(e)=>{
-  const  {name,value} = e.target;
-  setState({
-...state,
-[name]:value
-  })
-}
+  const changeState = (e) => {
+    const { name, value } = e.target;
+    setState({
+      ...state,
+      [name]: value,
+    });
+  };
 
-const sendSms = ()=>{
-  sendSms_cafe24(state);
-  setState({
-    name:"",
-    kind:"",
-    date:"",
-    tel:"",
-    address:"",
-    detailAddress:"",
-    area:"",
-    room:"",
-    bathRoom:"",
-    veranda:"",
-    QA:""
-  });
-  alert('견적문의가 발송되었습니다!');
-}
+  const sendSms = () => {
+    sendSms_munja(state);
+    setState({
+      name: "",
+      kind: "",
+      date: "",
+      tel: "",
+      address: "",
+      detailAddress: "",
+      area: "",
+      room: "",
+      bathRoom: "",
+      veranda: "",
+      QA: "",
+    });
+    alert("견적문의가 발송되었습니다!");
+  };
 
   return (
     <>
@@ -54,7 +56,6 @@ const sendSms = ()=>{
           alignItems={"center"}
           overflow="hidden"
         >
-
           <Image
             w="100%"
             maxW={"670px"}
@@ -79,8 +80,7 @@ const sendSms = ()=>{
                   name="name"
                   onChange={changeState}
                   borderWidth="1px"
-
-                  value={state?.name||""}
+                  value={state?.name || ""}
                   // value={'dkdk'}
                   borderColor={"#000"}
                 />
@@ -95,7 +95,6 @@ const sendSms = ()=>{
                   style={{ width: "100%", height: "30px", borderColor: "#000" }}
                   placeholder="서비스 종류"
                   name="kind"
-
                   value={state.kind}
                   onChange={changeState}
                 >
@@ -112,7 +111,6 @@ const sendSms = ()=>{
                   style={{ width: "100%", height: "30px" }}
                   placeholder="건물 종류"
                   name="object"
-
                   value={state.object}
                   onChange={changeState}
                 >
@@ -152,7 +150,6 @@ const sendSms = ()=>{
                   style={{ width: "100%", height: "30px", borderColor: "#000" }}
                   placeholder="화장실 갯수"
                   name="bathRoom"
-
                   value={state.bathRoom}
                   onChange={changeState}
                 >
@@ -288,11 +285,11 @@ const sendSms = ()=>{
                   w="100%"
                   bg="#2B2B2B"
                   h="45px"
-                  cursor={'pointer'}
-                  disabled={state?.tel?.length>=9?false:true}
+                  cursor={"pointer"}
+                  disabled={state?.tel?.length >= 9 ? false : true}
                   _disabled={{
-                    opacity:"0.5",
-                    cursor:"not-allowed"
+                    opacity: "0.5",
+                    cursor: "not-allowed",
                   }}
                   color="#fff"
                   fontWeight={"bold"}
@@ -353,7 +350,7 @@ const sendSms = ()=>{
                     width: "100%",
                     height: "30px",
                     borderColor: "#000",
-                    paddingInlineEnd:"0px",
+                    paddingInlineEnd: "0px",
                     borderRadius: "4px",
                     backgroundColor: "#fff",
                   }}
@@ -377,10 +374,9 @@ const sendSms = ()=>{
                     height: "30px",
                     borderColor: "#000",
                     borderRadius: "4px",
-                    paddingInlineEnd:"0px",
+                    paddingInlineEnd: "0px",
                     backgroundColor: "#fff",
                   }}
-                  
                   value={state.object}
                   placeholder="건물 종류"
                   name="object"
@@ -405,7 +401,7 @@ const sendSms = ()=>{
                     width: "100%",
                     height: "30px",
                     borderColor: "#000",
-                    paddingInlineEnd:"0px",
+                    paddingInlineEnd: "0px",
                     borderRadius: "4px",
                     backgroundColor: "#fff",
                   }}
@@ -430,7 +426,7 @@ const sendSms = ()=>{
                     width: "100%",
                     height: "30px",
                     borderColor: "#000",
-                    paddingInlineEnd:"0px",
+                    paddingInlineEnd: "0px",
                     borderRadius: "4px",
                     backgroundColor: "#fff",
                   }}
@@ -455,7 +451,7 @@ const sendSms = ()=>{
                     width: "100%",
                     height: "30px",
                     borderColor: "#000",
-                    paddingInlineEnd:"0px",
+                    paddingInlineEnd: "0px",
                     borderRadius: "4px",
                     backgroundColor: "#fff",
                   }}
@@ -581,13 +577,13 @@ const sendSms = ()=>{
                   bg="#2B2B2B"
                   h="45px"
                   color="#fff"
-                  cursor={'pointer'}
+                  cursor={"pointer"}
                   fontWeight={"bold"}
                   fontSize="18px"
-                  disabled={state?.tel?.length>=9?false:true}
+                  disabled={state?.tel?.length >= 9 ? false : true}
                   _disabled={{
-                    opacity:"0.5",
-                    cursor:"not-allowed"
+                    opacity: "0.5",
+                    cursor: "not-allowed",
                   }}
                   onClick={sendSms}
                 >
